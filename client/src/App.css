@@ -1,0 +1,17 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  /* background-color: #0F0F0F; */
+}
+
+
+body{
+  /* background-color: #0F0F0F; */
+  color: white;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+
+}

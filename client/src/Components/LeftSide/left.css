@@ -1,0 +1,67 @@
+.left {
+  width: 20%;
+  height: auto;          
+  overflow-y: auto;       
+  padding: 20px 0;
+  background-color: #0F0F0F;
+  /* background-color: red; */
+}
+.left::-webkit-scrollbar{
+    width: 0;
+}
+
+.home {
+  width: 90%;             /* a bit wider for better alignment */
+  margin: 0 auto;         /* center horizontally */
+  display: flex;
+  flex-direction: column;
+  /* gap: 12px;              spacing between sections */
+  padding: 0 10px;
+}
+
+.home-section, .Shorts-section, .Subscription-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.home-section:hover,
+.Shorts-section:hover,
+.Subscription-section:hover {
+  background-color: #3D3D3D;
+}
+
+.line {
+  background-color: rgba(255, 255, 255, 0.267);
+  width: 100%;
+  height: 1px;
+  margin: 12px 0;
+}
+
+.you {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 20px;
+  width: 90%;
+  margin: 10px auto;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.you:hover {
+  background-color: #3D3D3D;
+}
+
+
+

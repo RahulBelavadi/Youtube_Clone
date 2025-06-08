@@ -1,0 +1,66 @@
+.create-channel-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.create-channel-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #282828;
+}
+
+.channel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.channel-form label {
+  font-weight: 600;
+  color: #606060;
+  margin-bottom: 5px;
+}
+
+.channel-form input[type="text"],
+.channel-form input[type="url"],
+.channel-form textarea {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+.channel-form input[type="text"]:focus,
+.channel-form input[type="url"]:focus,
+.channel-form textarea:focus {
+  border-color: #065fd4;
+  outline: none;
+}
+
+.channel-form textarea {
+  resize: vertical;
+}
+
+.channel-form button {
+  background-color: #065fd4;
+  color: white;
+  padding: 12px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.channel-form button:hover {
+  background-color: #054db3;
+}
