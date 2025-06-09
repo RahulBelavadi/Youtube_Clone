@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './addVideo.css';
 import { useNavigate } from 'react-router-dom';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 function AddVideo() {
   const [title, setTitle] = useState('');
@@ -56,9 +57,16 @@ function AddVideo() {
     
   };
 
+  
+
   return (
     <div className="add-video-container">
-      <h2>Add New Video</h2>
+      <div className="cancel">
+        <h2>Add New Video</h2>
+      <button onClick={()=>{
+        navigate('/');
+      }}><CancelIcon sx={{color:"white",fontSize:"50px"}}/></button>
+      </div>
       <form onSubmit={handleSubmit} className="add-video-form">
         <input
           type="text"

@@ -2,52 +2,47 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './channel.css';
 import Left from '../LeftSide/Left';
+import moment from 'moment';
 
 function Channel({ showSidebar }) {
   const [channel, setChannel] = useState(null);
   const [myVideos, setMyVideos] = useState([]);
   const button = ['Home', 'Playlist', 'Post'];
-  console.log(channel);
+  const token = localStorage.getItem('token');
 
+  // Fetch channel info
   useEffect(() => {
     const fetchChannel = async () => {
-      const token = localStorage.getItem('token');
       try {
-        const res = await axios.get('http://localhost:5000/api/videos/myvideos', {
-
+        const res = await axios.get('http://localhost:5000/api/channel/me', {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setChannel(res.data);
+        setChannel(res.data.channel || res.data);
       } catch (error) {
         console.error('Error fetching channel:', error);
       }
     };
     fetchChannel();
-  }, []);
+  }, [token]);
 
+  // Fetch videos for the channel
   useEffect(() => {
     const fetchVideos = async () => {
-      const token = localStorage.getItem('token');
+      if (!channel?._id) return;
       try {
-        const res = await axios.get('http://localhost:5000/api/videos', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-
-        // Filter videos that belong to the logged-in user's channel
-        const userVideos = res.data.filter(
-          (video) => video.uploadedBy && video.uploadedBy._id === channel._id
+        const res = await axios.get(
+          `http://localhost:5000/api/videos?userId=${channel._id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
         );
-
-        setMyVideos(userVideos);
+        setMyVideos(res.data.videos || res.data);
       } catch (error) {
         console.error('Error fetching videos:', error);
       }
     };
-
-    if (channel?._id) {
-      fetchVideos();
-    }
-  }, [channel]);
+    fetchVideos();
+  }, [channel, token]);
 
   if (!channel) return <p>Loading channel info...</p>;
 
@@ -76,11 +71,7 @@ function Channel({ showSidebar }) {
               <span className="more">...more</span>
             </p>
             {channel.profileUrl && (
-              <a
-                href={channel.profileUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={channel.profileUrl} target="_blank" rel="noopener noreferrer">
                 Profile Link
               </a>
             )}
@@ -97,19 +88,30 @@ function Channel({ showSidebar }) {
           ))}
         </div>
 
-        <div className="videos">
+        <div className="channel-videos">
           {myVideos.length === 0 ? (
             <p>No videos uploaded yet.</p>
           ) : (
             myVideos.map((video) => (
-              <div key={video._id} className="video-card">
-                <video
-                  src={video.videoUrl}
-                  width="300"
-                  height="200"
-                  controls
-                ></video>
-                <p>{video.title}</p>
+              <div key={video._id} className="channel-video-card">
+                <div className="channel-video-thumbnail">
+                  <video
+                    src={`http://localhost:5000/uploads/${video.videoUrl}`}
+                    width="300"
+                    height="200"
+                    controls
+                  />
+                  <span className="channel-video-duration">⏱️</span>
+                </div>
+                <div className="channel-video-info">
+                  <div className="channel-icon">👤</div>
+                  <div className="channel-video-details">
+                    <h4>{video.title}</h4>
+                    <p>
+                      {video.views || 0} views · {moment(video.createdAt).fromNow()}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))
           )}

@@ -1,0 +1,45 @@
+.sidebar{
+    background-color: #0F0F0F;
+    width: 6%;
+    height: 100%;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    /* gap: 30px; */
+    
+}
+
+.buttons button{
+    background-color: #0F0F0F;
+    border: none;
+}
+
+.op{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    /* margin-bottom: 50%; */
+    margin-top: 30%;
+    gap: 8px;
+    /* back0round-color: red; */
+    width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.op *:hover{
+    cursor: pointer;
+   
+}
+.op:hover{
+     background-color: #2b2828;
+     
+}
+

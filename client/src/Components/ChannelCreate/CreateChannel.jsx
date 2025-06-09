@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './channelCreate.css';
+import CancelIcon from '@mui/icons-material/Cancel';
+
 
 function CreateChannel() {
   const [channelName, setChannelName] = useState('');
@@ -37,7 +39,7 @@ function CreateChannel() {
       );
 
       alert('Channel created successfully!');
-      navigate('/channel'); // or wherever you want to redirect
+      navigate('/channel');
     } catch (error) {
       alert('Error creating channel: ' + (error.response?.data?.message || error.message));
     }
@@ -45,44 +47,47 @@ function CreateChannel() {
 
   return (
     <div className="create-channel-container">
-      <h2>Create Your Channel</h2>
+      <div className="canelC">
+        <h2>Create Your Channel</h2>
+        <button onClick={()=>{
+          navigate('/')
+        }}><CancelIcon sx={{color:"white",fontSize:"50px"}}/></button>
+      </div>
       <form className="channel-form" onSubmit={handleSubmit}>
-        <label htmlFor="channelName">Channel Name *</label>
-        <input
-          id="channelName"
-          type="text"
-          placeholder="Enter channel name"
-          value={channelName}
-          onChange={(e) => setChannelName(e.target.value)}
-          required
-        />
+        <div className="input-group">
+          <label htmlFor="channelName">Channel Name *</label>
+          <input
+            id="channelName"
+            type="text"
+            placeholder="Enter channel name"
+            value={channelName}
+            onChange={(e) => setChannelName(e.target.value)}
+            required
+          />
+        </div>
 
-        <label htmlFor="description">Description</label>
-        <textarea
-          id="description"
-          placeholder="Tell viewers about your channel"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          rows={4}
-        />
+        <div className="input-group">
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            placeholder="Tell viewers about your channel"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            rows={4}
+          />
+        </div>
 
-        <label htmlFor="bannerUrl">Channel Banner URL</label>
-        <input
-          id="bannerUrl"
-          type="url"
-          placeholder="Paste banner image URL"
-          value={bannerUrl}
-          onChange={(e) => setBannerUrl(e.target.value)}
-        />
 
-        <label htmlFor="profileUrl">Profile Picture URL</label>
-        <input
-          id="profileUrl"
-          type="url"
-          placeholder="Paste profile image URL"
-          value={profileUrl}
-          onChange={(e) => setProfileUrl(e.target.value)}
-        />
+        <div className="input-group">
+          <label htmlFor="profileUrl">Profile Picture URL</label>
+          <input
+            id="profileUrl"
+            type="url"
+            placeholder="Paste profile image URL"
+            value={profileUrl}
+            onChange={(e) => setProfileUrl(e.target.value)}
+          />
+        </div>
 
         <button type="submit">Create Channel</button>
       </form>

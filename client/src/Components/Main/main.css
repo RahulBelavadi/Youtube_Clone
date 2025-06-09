@@ -71,15 +71,18 @@ main {
     width: 30px;
     height: 30px;
     border-radius: 50px;
+    object-fit: cover;
 }
 
 .image{
     display: flex;
-    /* background-color: red; */
     gap: 8px;
     margin-top: 5px;
-  
 }
+
+
+
+
 
 .titles{
     display: flex;

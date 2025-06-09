@@ -22,7 +22,9 @@ function Login() {
       const data = await loginUser({ email, password });
       localStorage.setItem("token", data.token);
       alert("Login successful!");
+     
       navigate("/");
+       window.location.reload();
     } catch (err) {
       setError(err.message);
     }

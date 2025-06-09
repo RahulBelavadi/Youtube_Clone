@@ -4,7 +4,11 @@
   padding: 20px;
   border-radius: 10px;
   width: 500px;
-  margin: auto;
+  height: auto;
+  /* margin: auto; */
+  margin-top: 5%;
+  margin-left: 30%;
+  
 }
 
 .add-video-form {
@@ -34,4 +38,25 @@
 .upload-message {
   margin-top: 10px;
   font-weight: bold;
+}
+.cancel{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1%;
+  align-items: center;
+  
+}
+
+.cancel button{
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  margin-bottom: 5%;
+  scale: 0.4; 
+  
+}
+
+.cancel button:hover{
+   cursor: pointer;
+  scale: 0.5;
 }

@@ -32,7 +32,7 @@ function Left() {
 
 
 
-            <div className="home">
+            {/* <div className="home">
 
                 {
                     History.map((val, ind) => {
@@ -42,8 +42,8 @@ function Left() {
                         </section>
                     })
                 }
-            </div>
-            <div className='line'></div>
+            </div> */}
+            {/* <div className='line'></div> */}
 
             <div className="home">
 

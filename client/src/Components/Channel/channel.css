@@ -1,31 +1,27 @@
-.Main{
+.Main {
   background-color: #0F0F0F;
   display: flex;
-  /* flex-direction: column; */
   height: 100vh;
-  
 }
 
-.infos{
+.infos {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.Profile-P{
+/* Profile Section */
+.Profile-P {
   width: 100%;
   height: 144px;
-  /* background-color: green; */
   display: flex;
   padding-top: 3%;
   padding-bottom: 1%;
 }
 
-
 .p-Details {
   width: 20%;
-  /* background-color: green; */
   height: 100%;
   display: flex;
   align-items: center;
@@ -33,64 +29,119 @@
 }
 
 .p-Details img {
-  width: 70%;           
+  width: 70%;
   height: 100%;
-  object-fit: fill;      
-  border-radius: 50%;    
+  object-fit: fill;
+  border-radius: 50%;
 }
 
-
-.info{
+.info {
   display: flex;
   flex-direction: column;
-  /* background-color: aqua; */
-  width: 50px; 
-  /* background-color: red; */
-  
+  width: 50px;
 }
 
-.channel-buttons{
+.info a {
+  text-decoration: none;
+  color: #0F3AC1;
+}
+
+.channel-buttons {
   display: flex;
   gap: 10px;
 }
 
-.channel-buttons button{
-    width: 150px;
+.channel-buttons button {
+  width: 150px;
   height: 30px;
   border: none;
   border-radius: 50px;
   background-color: gainsboro;
 }
 
-.button{
+/* Section Buttons */
+.button {
   display: flex;
   gap: 20px;
   border-bottom: solid 1px white;
   padding-bottom: 1%;
 }
 
-.button button{
+.button button {
   margin-top: 1%;
   width: 80px;
   height: 30px;
- background: transparent;
+  background: transparent;
   border: none;
   color: white;
   font-size: 15px;
-}
-
-.button button:hover,.info:hover button{
   cursor: pointer;
 }
 
-.info a{
-  text-decoration: none;
-  color: #0F3AC1;
+/* Channel Videos Section */
+.channel-videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 20px;
+  width: 100%;
+  background-color: #0F0F0F;
+  box-sizing: border-box;
 }
 
-.videos{
+.channel-video-card {
+  width: 300px;
+  color: white;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.channel-video-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.channel-video-thumbnail video {
   width: 100%;
   height: 100%;
-  background-color: #0F0F0F;
+  object-fit: cover;
 }
 
+.channel-video-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.channel-video-info {
+  display: flex;
+  margin-top: 10px;
+}
+
+.channel-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #888;
+}
+
+.channel-video-details h4 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.channel-video-details p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #aaa;
+}

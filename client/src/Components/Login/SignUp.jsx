@@ -29,7 +29,7 @@ function SignUp() {
       // Save token (optional: you can save user info too)
       localStorage.setItem("token", data.token);
       alert("Account created!");
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     }
