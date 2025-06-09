@@ -78,16 +78,19 @@
 
 
 .likes{
-    padding-left: 2%;
+ 
     display: flex;
-    gap: 20px;
+    gap: 10px;
     width: 30%;
-    /* background-color: #be6969; */
+    background-color: #272727;
     justify-content: center;
     align-items: center;
-    padding-right: 3%;
-    
+    padding: 2px;
+    border-radius: 10px;
+    margin-left: 80%;   
 }
+
+
 
 .info{
     display: flex;
@@ -95,6 +98,7 @@
     width: 100%;
     margin-top: 1%;
     /* background-color: red; */
+    /* align-items: center; */
 }
 
 .share{
@@ -110,19 +114,29 @@
      background-color: #272727;
 }
 
+.download:hover{
+  cursor: pointer;
+  
+
+}
+
 .likes-,.dislike-{
     display: flex;
     width: auto;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; */
     /* background-color: rgb(13, 29, 44); */
     padding: 0 2% 0 2%;
     border-radius: 10px;
     height: 30px;
     font-size: 13px;
-    background-color: #272727;
+    /* background-color: #272727; */
+    /* margin-left: 15%; */
+    border: none;
 }
+
+
 
 .options{
     background-color: #272727;
@@ -177,8 +191,11 @@
 
 /* Comments Section */
 .comments-section {
-  margin-top: 30px;
+  /* margin-top: 5px; */
   color: white;
+  height: auto;
+  /* margin-bottom: 5%; */
+  padding-bottom: 80px;
 }
 
 .comment-input {
@@ -326,4 +343,20 @@
 .reply-text {
   margin: 3px 0;
   font-size: 13px;
+}
+
+.dis{
+  background-color: red;
+  height: 70px;
+  padding-left: 1%;
+  border-radius: 10px;
+  background-color: #272727;
+  margin-top: 1%;
+}
+
+#channelimg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  object-fit: cover;
 }

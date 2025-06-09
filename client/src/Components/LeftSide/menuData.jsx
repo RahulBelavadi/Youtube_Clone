@@ -1,10 +1,9 @@
-// menuData.js
 import HomeIcon from '@mui/icons-material/Home';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import HistoryIcon from '@mui/icons-material/History';
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
+// import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
@@ -27,15 +26,17 @@ export const homeMenu = [
     {
         icon: <HomeIcon />,
         name: "Home",
-        path: "/"         // <-- add path here
+        path: "/"         
     },
     {
         icon: <VideoCameraFrontIcon />,
-        name: "Shorts"
+        name: "Shorts",
+        path: "/Shorts"
     },
     {
         icon: <SubscriptionsIcon />,
-        name: "Subscription"
+        name: "Subscription",
+        path: "/Subscription"
     }
 ];
 
@@ -44,18 +45,23 @@ export const History = [
     {
         icon: <HistoryIcon />,
         name: "History"
+        ,
+        path: "/History"
     },
     {
         icon: <PlaylistPlayIcon />,
-        name: "Playlist"
+        name: "Playlist", 
+        path: "/Playlist"
     },
     {
         icon: <AccessTimeIcon />,
-        name: "Watch Later"
+        name: "Watch Later",
+         path: "/Watch_Later"
     },
       {
         icon: <ThumbUpIcon />,
-        name: "Liked Videos"
+        name: "Liked Videos", 
+        path: "/Liked"
     }
 ];
 
@@ -64,7 +70,8 @@ export const History = [
 export const Explore = [
     {
         icon: <WhatshotIcon />,
-        name: "History"
+        name: "History",
+        path: "/History"
     },
     {
         icon: <LocalMallIcon />,

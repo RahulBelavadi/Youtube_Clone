@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import './channelCreate.css';
 import CancelIcon from '@mui/icons-material/Cancel';
 
-
 function CreateChannel() {
   const [channelName, setChannelName] = useState('');
   const [description, setDescription] = useState('');
@@ -47,11 +46,11 @@ function CreateChannel() {
 
   return (
     <div className="create-channel-container">
-      <div className="canelC">
+      <div className="cancelC">
         <h2>Create Your Channel</h2>
-        <button onClick={()=>{
-          navigate('/')
-        }}><CancelIcon sx={{color:"white",fontSize:"50px"}}/></button>
+        <button onClick={() => navigate('/')}>
+          <CancelIcon sx={{ color: "white", fontSize: "50px" }} />
+        </button>
       </div>
       <form className="channel-form" onSubmit={handleSubmit}>
         <div className="input-group">
@@ -76,7 +75,6 @@ function CreateChannel() {
             rows={4}
           />
         </div>
-
 
         <div className="input-group">
           <label htmlFor="profileUrl">Profile Picture URL</label>

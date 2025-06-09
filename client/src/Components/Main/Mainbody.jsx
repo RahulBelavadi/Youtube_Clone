@@ -5,6 +5,7 @@ import Trends from '../Trends/Trends';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SideBar from '../SideBar/SideBar';
+import moment from 'moment';
 
 function Mainbody({ showSidebar, channelToggle, searchTerm }) {
   const [videos, setVideos] = useState([]);
@@ -19,7 +20,7 @@ function Mainbody({ showSidebar, channelToggle, searchTerm }) {
     const fetchVideos = async () => {
       try {
         setLoading(true);
-        const res = await axios.get('http://localhost:5000/api/videos'); // backend route to get all videos
+        const res = await axios.get('http://localhost:5000/api/videos');
         setVideos(res.data.videos || res.data);
       } catch (err) {
         console.error(err);
@@ -36,67 +37,40 @@ function Mainbody({ showSidebar, channelToggle, searchTerm }) {
     }
   }, [token]);
 
-  // Filter videos by searchTerm and selectedTrend
   const filteredVideos = videos.filter((video) => {
     const matchesSearch = video.title.toLowerCase().includes(searchTerm.toLowerCase());
+    if (selectedTrend === 'All') return matchesSearch;
 
-    // If selected trend is 'All', ignore trend filtering
-    if (selectedTrend === 'All') {
-      return matchesSearch;
-    }
-
-    // Assuming your video object has a category or tags property for filtering by trend
-    // For example, video.category or video.tags includes selectedTrend
-    // Adjust this according to your video data structure
-
-    const videoCategory = video.category || ''; // fallback empty string if no category
-
+    const videoCategory = video.category || '';
     const matchesTrend = videoCategory.toLowerCase() === selectedTrend.toLowerCase();
-
     return matchesSearch && matchesTrend;
   });
 
-  if (loading)
-    return (
-      <h2 style={{ color: 'white', textAlign: 'center', marginTop: '2rem' }}>
-        Loading videos...
-      </h2>
-    );
-  if (error)
-    return (
-      <h2 style={{ color: 'red', textAlign: 'center', marginTop: '2rem' }}>
-        {error}
-      </h2>
-    );
-
+  console.log(videos);
+  
   return (
     <main>
-      {showSidebar ? <Left />:<SideBar/>}
-      
+      {showSidebar ? <Left /> : <SideBar />}
 
       <div className="Right">
-        <div className="div">
+        <div className="trends-wrapper">
           <Trends selectedTrend={selectedTrend} onTrendSelect={setSelectedTrend} />
         </div>
 
         <div className="videos">
           {!token ? (
-            <h2 style={{ color: 'white', textAlign: 'center', marginTop: '2rem' }}>
-              Please login to view videos.
-            </h2>
+            <h2 className="message">Please login to view videos.</h2>
           ) : filteredVideos.length === 0 ? (
-            <h2 style={{ color: 'white', textAlign: 'center', marginTop: '2rem' }}>
-              No videos available.
-            </h2>
+            <h2 className="message">No videos available.</h2>
           ) : (
             filteredVideos.map((val, ind) => (
               <div
                 className="vid1"
                 key={ind}
-                onClick={() => navigate('/video', { state: val })}
-                style={{ cursor: 'pointer' }}
+                onClick={() => navigate(`/video/${val._id}`, { state: val })}
               >
                 <video
+                crossOrigin="anonymous"
                   muted
                   loop
                   controls
@@ -108,23 +82,27 @@ function Mainbody({ showSidebar, channelToggle, searchTerm }) {
                   }}
                   onMouseOut={(e) => e.target.pause()}
                 >
-                  <source
-                    src={`http://localhost:5000/videos/${val.videoUrl}`}
-                    type="video/mp4"
-                  />
+                  <source  src={`http://localhost:5000/${val.videoUrl}`} type="video/mp4"/>
                 </video>
+
                 <div className="details">
                   <div className="image">
+                    
                     <img
-                      src={`http://localhost:5000/thumbnails/${val.thumbnailUrl}`}
-                      alt={val.title}
-                    />
+                    crossOrigin="anonymous"
+                        className="video-thumbnail"
+                        src={`http://localhost:5000/${val.thumbnailUrl}`}
+                        alt={val.title}
+                      />
+
+                    
                     <div className="titles">
+                      <h3>{val.description}</h3>
                       <span id="title">{val.title}</span>
-                      <span id="channelName">
-                        {val.uploadedBy?.channelName || 'Unknown'}
-                      </span>
-                      <span id="likes">{val.views || 0} views</span>
+                    <div className="createAt">
+                        <span id="likes">{val.views || 0} views  &nbsp;</span>
+                         <span id="channelName">{moment(val.createdAt).fromNow()}</span>
+                    </div>
                     </div>
                   </div>
                 </div>

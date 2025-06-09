@@ -1,15 +1,14 @@
 .create-channel-container {
   width: 100%;
   max-width: 800px;
- margin-left: 20%;
- margin-top: 1%;
+  margin-left: 20%;
+  margin-top: 1%;
   padding: 20px;
   background-color: #0f0f0f;
   color: white;
   border-radius: 12px;
   font-family: 'Roboto', sans-serif;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-
 }
 
 .create-channel-container h2 {
@@ -76,22 +75,22 @@
   background-color: #358dde;
 }
 
-.canelC{
+.cancelC {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.canelC button{
+.cancelC button {
   border: none;
   background-color: transparent;
   height: 30px;
   margin-bottom: 5%;
   scale: 0.4;
-  
+  transition: scale 0.2s ease;
 }
 
-.canelC button:hover{
+.cancelC button:hover {
   cursor: pointer;
   scale: 0.5;
 }

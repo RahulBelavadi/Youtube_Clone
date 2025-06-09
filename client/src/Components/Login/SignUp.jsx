@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { signupUser } from "./api"; // import your API helper
+import { signupUser } from "./api";
 import "./auth.css";
 
 function SignUp() {
-  const [username, setUsername] = useState(""); // add username field
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -19,6 +19,7 @@ function SignUp() {
       setError("Please fill in all fields.");
       return;
     }
+
     if (password !== confirm) {
       setError("Passwords do not match.");
       return;
@@ -26,7 +27,6 @@ function SignUp() {
 
     try {
       const data = await signupUser({ username, email, password });
-      // Save token (optional: you can save user info too)
       localStorage.setItem("token", data.token);
       alert("Account created!");
       navigate("/login");

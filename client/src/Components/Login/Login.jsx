@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { loginUser } from "./api"; // import your API helper
+import { loginUser } from "./api"; 
 import "./auth.css";
 
 function Login() {
@@ -22,9 +22,8 @@ function Login() {
       const data = await loginUser({ email, password });
       localStorage.setItem("token", data.token);
       alert("Login successful!");
-     
       navigate("/");
-       window.location.reload();
+      window.location.reload();
     } catch (err) {
       setError(err.message);
     }

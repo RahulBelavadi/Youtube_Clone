@@ -3,6 +3,7 @@ import axios from 'axios';
 import './channel.css';
 import Left from '../LeftSide/Left';
 import moment from 'moment';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function Channel({ showSidebar }) {
   const [channel, setChannel] = useState(null);
@@ -45,6 +46,7 @@ function Channel({ showSidebar }) {
   }, [channel, token]);
 
   if (!channel) return <p>Loading channel info...</p>;
+console.log(myVideos);
 
   return (
     <div className="Main">
@@ -52,13 +54,11 @@ function Channel({ showSidebar }) {
       <div className="infos">
         <div className="Profile-P">
           <div className="p-Details">
-            <img
-              src={
-                channel.channelBanner ||
-                'https://marketplace.canva.com/EAGB3AnqOvw/2/0/1600w/canva-yellow-and-red-bright-and-playful-youtube-thumbnail-CgL1zxwL2bE.jpg'
-              }
-              alt="Channel Banner"
-            />
+            {channel.channelBanner ? (
+              <img src={channel.channelBanner} alt="Channel Banner" />
+            ) : (
+              <AccountCircleIcon sx={{ fontSize: 100, color: '#ccc' }} />
+            )}
           </div>
           <div className="info">
             <h2>{channel.channelName || 'No Channel Name'}</h2>
@@ -95,8 +95,15 @@ function Channel({ showSidebar }) {
             myVideos.map((video) => (
               <div key={video._id} className="channel-video-card">
                 <div className="channel-video-thumbnail">
-                  <video
-                    src={`http://localhost:5000/uploads/${video.videoUrl}`}
+                  <video onMouseOver={(e) => {
+                  const playPromise = e.target.play();
+                  if (playPromise !== undefined) {
+                    playPromise.catch(() => {});
+                  }
+                }}
+                onMouseOut={(e) => e.target.pause()}
+                    crossOrigin="anonymous"
+                    src={`http://localhost:5000/${video.videoUrl}`} type="video/mp4"
                     width="300"
                     height="200"
                     controls
