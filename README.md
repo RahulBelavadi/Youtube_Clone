@@ -112,12 +112,13 @@ GET	/api/comments/:videoId	Get video comments
 
 | Feature/Page | Screenshot |
 |--------------|------------|
-| Home         | ![Home](public/ChannelPage.png) |
-| HomePage     | ![HomePage](public/HomePage.png) |
-| Login        | ![Login](public/Login.png) |
-| SignUp       | ![SignUp](public/SignUp.png) |
-| UploadImage  | ![UploadImage](public/UploadImage.png) |
-| Videos       | ![Videos](public/Videos.png) |
+| Home         | ![Home](client/public/ChannelPage.png) |
+| HomePage     | ![HomePage](client/public/HomePage.png) |
+| Login        | ![Login](client/public/Login.png) |
+| SignUp       | ![SignUp](client/public/SignUp.png) |
+| UploadVideo  | ![UploadVideo](client/public/UploadVideo.png) |
+| Videos       | ![Videos](client/public/Videos.png) |
+
 
 
 
