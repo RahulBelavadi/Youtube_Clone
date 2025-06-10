@@ -122,9 +122,7 @@ Project Link: https://github.com/RahulBelavadi/Youtube_Clone
 - **Express.js**: Backend API server
 - **React.js**: Frontend SPA
 - **Node.js**: Server runtime
-- **Firebase Storage**: Video and file storage
 - **JWT**: Authentication
-- **Nodemailer**: Email for registration and password reset
 - **MUI & React Icons**: UI components and icons
 
 ---
