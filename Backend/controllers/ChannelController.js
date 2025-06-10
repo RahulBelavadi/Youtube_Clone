@@ -2,17 +2,15 @@ const Channel = require('../models/Channel');
 
 const createChannel = async (req, res) => {
   const { channelName, description, channelBanner, profileUrl } = req.body;
-
   try {
-    const newChannel = new Channel({
+    const newChannel = await new Channel({
       channelName,
       description,
       channelBanner,
       owner: req.userId,
-      profileUrl
-    });
+      profileUrl,
+    }).save();
 
-    await newChannel.save();
     res.status(201).json({ success: true, message: "Channel created", channel: newChannel });
   } catch (err) {
     res.status(500).json({ success: false, message: "Error creating channel", error: err.message });
@@ -22,30 +20,21 @@ const createChannel = async (req, res) => {
 const getChannelById = async (req, res) => {
   try {
     const channel = await Channel.findById(req.params.id);
-    if (!channel) {
-      return res.status(404).json({ message: 'Channel not found' });
-    }
-    res.status(200).json(channel);
+    if (!channel) return res.status(404).json({ message: 'Channel not found' });
+    res.json(channel);
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 };
 
-// Add this function:
 const getMyChannel = async (req, res) => {
   try {
     const channel = await Channel.findOne({ owner: req.userId });
-    if (!channel) {
-      return res.status(404).json({ message: 'Channel not found' });
-    }
-    res.status(200).json(channel);
+    if (!channel) return res.status(404).json({ message: 'Channel not found' });
+    res.json(channel);
   } catch (err) {
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 };
 
-module.exports = {
-  createChannel,
-  getChannelById,
-  getMyChannel,  // export this too
-};
+module.exports = { createChannel, getChannelById, getMyChannel };

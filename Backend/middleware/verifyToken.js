@@ -9,7 +9,7 @@ const verifyToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.userId = decoded.id;  // adjust according to your token payload
+    req.userId = decoded.id; 
     next();
   } catch (err) {
     return res.status(403).json({ message: 'Forbidden, invalid token' });

@@ -5,7 +5,7 @@ const fs = require('fs');
 const videoDir = path.join(__dirname, '../uploads/videos');
 const thumbDir = path.join(__dirname, '../uploads/thumbnails');
 
-// Ensure directories exist
+
 [videoDir, thumbDir].forEach(dir => {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 });
