@@ -8,6 +8,8 @@ A full-stack YouTube clone built with React, Node.js, Express, and MongoDB that 
 
 ![YouTube Clone Screenshot](https://i.imgur.com/JqYeZ0l.png)
 
+![App Screenshot](/client/public/images/screenshot.png)
+
 ## Features
 
 - 🎥 Video upload and streaming
