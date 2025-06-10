@@ -112,23 +112,12 @@ GET	/api/comments/:videoId	Get video comments
 
 | Feature/Page | Screenshot |
 |--------------|------------|
-| Home         | ![Home](client/public/ChannelPage.png) |
+| Home         | ![Home](https://github.com/RahulBelavadi/Youtube_Clone/raw/main/client/public/HomePage.png) |
 | HomePage     | ![HomePage](client/public/HomePage.png) |
 | Login        | ![Login](client/public/Login.png) |
 | SignUp       | ![SignUp](client/public/SignUp.png) |
 | UploadVideo  | ![UploadVideo](client/public/UploadVideo.png) |
 | Videos       | ![Videos](client/public/Videos.png) |
-
-
-
-
-
-
-
-
-
-
-
 
 Contributing
 Contributions are welcome! Please follow these steps:
