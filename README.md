@@ -108,16 +108,17 @@ GET	/api/comments/:videoId	Get video comments
 > **All screenshots are now organized in the `client/public` folder.**
 > Paste your screenshot images in that folder and update the links below as needed.
 
+## Screenshots
+
 | Feature/Page | Screenshot |
 |--------------|------------|
-| Home         | ![Home](client/public/ChannelPage.png) |
-| HomePage     | ![HomePage](client/public/HomePage.png) |
-| Login        | ![Login](client/public/Login.png) |
-| SignUp       | ![SignUp](client/public/SignUp.png) |
-| UploadImage  | ![UploadImage](client/public/UploadImage.png) |
-| Videos       | ![Videos](client/public/Videos.png) |
+| Home         | ![Home](public/ChannelPage.png) |
+| HomePage     | ![HomePage](public/HomePage.png) |
+| Login        | ![Login](public/Login.png) |
+| SignUp       | ![SignUp](public/SignUp.png) |
+| UploadImage  | ![UploadImage](public/UploadImage.png) |
+| Videos       | ![Videos](public/Videos.png) |
 
----
 
 
 
