@@ -112,7 +112,7 @@ GET	/api/comments/:videoId	Get video comments
 
 | Feature/Page | Screenshot |
 |--------------|------------|
-| Home         | ![img_alt](https://github.com/RahulBelavadi/Youtube_Clone/blob/main/client/public/ChannelPage.png?raw=true) |
+| Home         | ![imge alt](https://github.com/RahulBelavadi/Youtube_Clone/blob/main/client/public/ChannelPage.png?raw=true) |
 | HomePage     | ![HomePage](client/public/HomePage.png) |
 | Login        | ![Login](client/public/Login.png) |
 | SignUp       | ![SignUp](client/public/SignUp.png) |
