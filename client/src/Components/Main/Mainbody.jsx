@@ -97,8 +97,10 @@ function Mainbody({ showSidebar, channelToggle, searchTerm }) {
 
                     
                     <div className="titles">
-                      <h3>{val.description}</h3>
-                      <span id="title">{val.title}</span>
+                    <h3 id="title">{val.title}</h3> 
+                    
+                      <h5>{val.description}</h5>
+                      
                     <div className="createAt">
                         <span id="likes">{val.views || 0} views  &nbsp;</span>
                          <span id="channelName">{moment(val.createdAt).fromNow()}</span>
