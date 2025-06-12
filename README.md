@@ -4,7 +4,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/RahulBelavadi/Youtube_Clone?style=social)](https://github.com/RahulBelavadi/Youtube_Clone/network/members)
 [![GitHub license](https://img.shields.io/github/license/RahulBelavadi/Youtube_Clone)](https://github.com/RahulBelavadi/Youtube_Clone/blob/main/LICENSE)
 
-A full-stack YouTube clone built with React, Node.js, Express, and MongoDB that replicates core YouTube functionality including video streaming, comments, likes, and subscriptions.
+A full-stack YouTube clone built with React, Node.js, Express, and MongoDB that replicates core YouTube functionality including video streaming, comments, likes,reply, and subscriptions.
 
 ![YouTube Clone Screenshot](client/public/HomePage.png)
 
