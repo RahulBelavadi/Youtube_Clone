@@ -145,7 +145,6 @@ Project Link: https://github.com/RahulBelavadi/Youtube_Clone
 - **React.js**: Frontend SPA
 - **Node.js**: Server runtime
 - **JWT**: Authentication
-- **Nodemailer**: Email for registration and password reset
 - **MUI & React Icons**: UI components and icons
 
 ---
